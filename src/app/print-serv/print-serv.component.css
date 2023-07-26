@@ -1,0 +1,74 @@
+#logo{
+    
+    width: 100px;
+    
+}
+
+#box{
+   
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+ 
+}
+#ver{
+
+    border-style: solid;
+}
+
+
+
+#nombre {
+    display: inline-block;
+    margin-top: 5%;
+    
+}
+
+
+
+#modelo {
+ 
+    display: inline-block;
+    
+}
+
+#serial {
+ 
+    display: inline-block;
+    
+}
+
+.textos{
+    margin-right: 5%;
+    display: inline-block;
+    
+}
+
+#tecnico 
+{
+    
+ display: inline-block;     
+ margin-left: 5%; 
+}
+
+
+
+
+#namebox {
+
+    
+    padding: auto;
+
+}
+
+#modelobox{
+     
+    padding-left: 12rem;
+}
+
+#seriebox{
+    
+    padding-left: 12rem;
+}
+
+
+

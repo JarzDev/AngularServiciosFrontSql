@@ -1,0 +1,58 @@
+<div class="container">
+    <div>
+        <h3>Crear Servicio</h3>
+    </div>
+    
+    
+      <div class="container-sm">
+    
+       
+        
+        <form  [formGroup]="form" >
+            <div class="form-group">
+              <label for="exampleFormControlInput1">Nombre del Servicio</label>
+              <input type="text" class="form-control" id="name_serv"  name="name_serv"  formControlName="name_serv" placeholder="Nombre del Servicio" >
+            </div>
+    
+            <div>
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Fecha y Hora del Servicio</label>
+                    <input type="datetime-local" class="form-control" id="fecha"  formControlName="fecha" name="fecha"placeholder="Nombre del Servicio" >
+                  </div>
+                
+            </div>
+    
+            <div class="form-group">
+            <label for="tareasRealizadas">Tareas Realizadas</label>
+            <textarea class="form-control"  formControlName="descripcion" name="descripcion" id="descripcion" rows="4"  ></textarea >
+          </div>
+    
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Partes Usadas</label>
+            <input type="text" class="form-control" id="partes"  formControlName="partes" name="partes" placeholder="partes" >
+          </div>
+          
+          <div class="form-group">
+            <label for="tareasRealizadas">Recomendaciones</label>
+            <textarea class="form-control" name="recomendaciones" formControlName="recomendaciones" id="recomendaciones" rows="3"  ></textarea >
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Horas de Servicio</label>
+            <input type="text" class="form-control" formControlName="horas_serv" id="horas_serv"  name="horas_serv" placeholder="horas" >
+          </div>
+           
+          <div class="form-group">
+            <input hidden type="number"   value="{{form.value.equipos}}"   formControlName="equipo"  name="equipo_id"  >
+            <select class="form-control" onchange="this.form.equipo_id.value=this.value"  (change)="onSelect($event.target.value)">
+              <option>Seleccione Equipo</option>
+            <option *ngFor="let eqp of equipos |async  " value={{eqp.id}}>
+          Equipo {{eqp.marca}}|| Modelo:  {{eqp.modelo}}|| Serial: {{eqp.serial}}|| Empresa {{eqp.contacto.cliente.empresa}}
+          <input  name="id" id="id" value={{eqp.equipos}}>
+            </option>
+          </select>
+          </div>
+          <button type="button"  (click)="createServ()" class="btn btn-primary">Crear Servicio</button>
+        </form>
+    
+    </div>
+    

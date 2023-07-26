@@ -1,0 +1,33 @@
+<div class="container md">
+    <div>
+  <h3>Empresas</h3>
+  </div>
+  <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Empresa</th>
+          <th scope="col">Rut</th>
+          <th scope="col">Direccion</th>
+          <th scope="col">Acciones</th>
+          <th scope="col"></th>
+          
+          
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="table-active" *ngFor="let clien of cliente ">
+          <th scope="row">{{clien.empresa}}</th>
+          <td>{{clien.rut}}</td>
+          <td>{{clien.direccion}}</td>
+          <td><button type="button"  routerLink="/editclient/{{clien.id}}" class="btn btn-dark">Editar</button></td>
+          <td><button  type="button" routerLink="/newcontact" class="btn btn-primary">Crear Contacto </button></td>
+          
+        </tr>
+       
+       
+        
+        
+      </tbody>
+    </table>
+  
+  </div>

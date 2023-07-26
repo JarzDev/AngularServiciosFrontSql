@@ -1,0 +1,38 @@
+<div class="container md">
+    <div>
+  <h3>Equipos</h3>
+  </div>
+  <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Marca</th>
+          <th scope="col">Modelo</th>
+          <th scope="col">Serial</th>
+          <th scope="col">Contador</th>
+          <th scope="col">Empresa</th>
+          <th scope="col">Contacto</th>
+          <th scope="col">Acciones</th>
+          <th scope="col"></th>
+          
+         
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="table-active" *ngFor="let eqp of equipos " >
+          <th scope="row">{{eqp.marca}}</th>
+          <td>{{eqp.modelo}}</td>
+          <td>{{eqp.serial}}</td>
+          <td>{{eqp.contador}}</td>
+            <td>{{eqp.contacto.cliente.empresa}}</td>
+            <td>{{eqp.contacto.nombre}}  {{eqp.contacto.apellido}} </td>
+            <td><button type="button" routerLink="/editequip/{{eqp.id}}" class="btn btn-dark">  Editar</button></td>
+            <td><button  type="button" routerLink="/newserv" class="btn btn-primary">Crear servicio </button></td>
+
+          
+        </tr>
+        
+      </tbody>
+    </table>
+  
+  </div>
+

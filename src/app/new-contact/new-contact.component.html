@@ -1,0 +1,49 @@
+<div class="container">
+    <div>
+      <h3>{{operacion}} Contacto</h3>
+    </div>
+      <div class="container-sm">
+        
+       
+        <form  [formGroup]="form" (ngSubmit)="newContact()" >
+            <div class="form-group">
+            <label for="exampleInputEmail1">Nombre</label>
+            <input type="text"   class="form-control" formControlName="nombre" name="nombre" id="nombre"  placeholder="Nombre" >
+            <small  class="form-text text-muted">Nombre Cliente.</small>
+          </div>
+          <div class="form-group">
+              <label for="exampleInputEmail1">Apellido</label>
+              <input type="text"  class="form-control"  formControlName="apellido" name="apellido" id="apellido"  placeholder="Apellido" >
+              <small id="emailHelp" class="form-text text-muted">Apellido Cliente.</small>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Correo</label>
+              <input type="text"  class="form-control"  formControlName="correo" name="correo" id="correo"  placeholder="correo" >
+              <small id="emailHelp" class="form-text text-muted">correo Cliente.</small>
+            </div>
+          <div class="form-group">
+              <label for="exampleInputEmail1">Telefono +</label>
+              <input type="text" class="form-control"  formControlName="telefono"  name="telefono"   placeholder="56912345678"  >
+              <small id="emailHelp" class="form-text text-muted">telefono sin el +</small>
+            </div>
+  
+            <div *ngIf="form">
+            <div class="form-group">
+              <input hidden type="number"   value="{{form.value.empresas}}"   formControlName="empresas"  name="cliente_id"  >
+              <select class="form-control" onchange="this.form.cliente_id.value=this.value"  (change)="onSelect($event.target.value)">
+                <option>Seleccione Cliente</option>
+              <option *ngFor="let client of clientes |async  " value={{client.id}}>
+            {{client.empresa}} 
+            <input  name="id" id="id" value={{client.empresa}}>
+              </option>
+            </select>
+          </div>
+            </div>
+            
+           
+            <button  type="submit"  class="btn btn-primary">{{operacion}}</button>
+        </form>
+        
+        
+   </div>
+  </div>

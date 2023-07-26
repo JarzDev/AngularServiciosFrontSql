@@ -1,0 +1,116 @@
+<div class="container-sm">
+
+    <div id="box" class="text-center">
+      <img   src='http://agilenetworks.cl/images/favicon/aglogo.png'  id='logo'/>
+      </div>
+ 
+  <h3 class=" text-center">Empresa:{{servicio.equipo.contacto.cliente.empresa}}</h3>
+      
+      <table class='table table-dark table hover'>
+        
+        <thead>
+        <tr>
+          
+          <th class="col-md-2 text-center" scope="col">Rut </th>
+          <th class="col-md-2 text-center" scope="col">Direccion</th>
+          <th class="col-md-2 text-center" scope="col">Telefono</th>
+          <th class="col-md-2 text-center" scope="col">Fecha</th>
+          
+          </tr>
+        </thead>
+        <tbody>
+         
+          <tr  scope="row">
+            
+            <td class="text-center">{{servicio.equipo.contacto.cliente.rut}}</td>
+            <td class="text-center">{{servicio.equipo.contacto.cliente.direccion}}</td>
+            <td class="text-center">  {{servicio.equipo.contacto.telefono}}</td>
+            <td class="text-center">  {{servicio.fecha | date:"medium"}}</td> 
+            
+          </tr>
+        </tbody>
+        </table>
+     <div class="d-flex justify-content-center">
+        <table>
+          <thead>
+            <tr>
+              <th id="namebox" class="col-md-2 "  scope="col"><h3> Marca</h3></th>
+              <th id="modelobox" class="col-md-2 " scope="col"><h3>Modelo </h3></th>
+              <th id="seriebox" class="col-md-2 " scope="col"><h3> Serie </h3> </th>
+              
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="namebox" class="col-md-2 " >{{servicio.equipo.marca}}</td>
+              <td id="modelobox" class="col-md-2 ">{{servicio.equipo.modelo}}</td>
+              <td id="seriebox" class="col-md-2 " >{{servicio.equipo.serial}}</td>
+              
+            </tr>
+         </table>
+        </div>
+        
+
+          <div id="motivobox">
+            <hr>
+            <h6 id='motivo' class="text-center"> Motivo del Servicio: </h6> <p class="text-center"> {{servicio.name_serv}} </p>
+            </div>
+    
+            
+           
+           <div id='blockTareas'>
+           <hr/>
+          <h4 class="blockquote text-center">Tareas Realizadas</h4>
+           <p class=" text-center">{{servicio.descripcion}}</p>
+           <hr/>
+           <h4 class="blockquote text-center">Partes Usadas</h4>
+           <p class=" text-center">{{servicio.partes}}</p>
+            
+           <hr/>
+           <h4 class="blockquote text-center">recomendaciones</h4>
+           <p class=" text-center">{{servicio.recomendaciones}}</p>
+           <hr/>
+           <h4 class="blockquote text-center">Horas Usadas</h4>
+           <p class=" text-center">{{servicio.horas_serv}}</p>
+           <hr/>
+           </div>
+            
+          
+        <div class="d-flex justify-content-center">
+              <table >
+
+                <thead>
+                  <tr>
+                    <th id="namebox"  scope="col"><h3 class="text-center"> Realizado Por:</h3></th>
+                    <th id="modelobox"  scope="col"><h3 class="text-center">Contacto: </h3></th>
+                    </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td id="namebox" class="col-md-2 text-center" >Jose Ramirez</td>
+                    <td id="modelobox" class="col-md-2  text-center"> {{servicio.equipo.contacto.nombre }} {{servicio.equipo.contacto.apellido }} </td>
+                    
+                  </tr>
+                  <tr>
+                    <td id="namebox" class="col-md-2 text-center " >+56954927928</td>
+                    <td id="modelobox" class="col-md-2 text-center">{{servicio.equipo.contacto.telefono}} </td>
+                 </tr>
+                 <tr>
+                  <td id="namebox" class="col-md-2 text-center " >jramirez@agilenetworks.cl</td>
+                  <td id="modelobox" class="col-md-2 text-center">{{servicio.equipo.contacto.correo}} </td>
+               </tr>
+
+                    </table>
+                  </div>       
+
+
+             
+     <hr/><br/> 
+     <div id="img" class="container text-center">
+      <h3>www.AgileNetworks.cl</h3>
+    </div>
+     <div class="text-center">
+     <button class="btn btn-primary " (click)="imprimir()">Imprimir</button>
+    </div>
+
+  
